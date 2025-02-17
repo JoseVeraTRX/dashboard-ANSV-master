@@ -1,0 +1,235 @@
+main {
+  display: grid;
+  place-items: center;
+  height: 85.7vh;
+}
+.griddle{
+  display: grid;
+  grid-template-columns: 1fr .8fr 1fr;
+  place-items: center;
+}
+b{
+  font-size: 20px;
+}
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.logo_form{
+  display: none;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #BB2D3B;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: white;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked + .slider {
+  background: #D99027;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #D99027;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em) rotate(90deg);
+}
+#formAccidentes{
+  text-align: center;
+  height: 100%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: .55fr .55fr .55fr .1fr .5fr 1.5fr .2fr .2fr; 
+  place-items: center;
+  gap: 7px;
+  grid-template-areas: 
+   "top_1 top_1"
+    "top_2 top_3"
+    "top_4 top_5"
+    "blank_1 blank_1"
+    "mid_1 mid_2"
+    "mid_1 mid_2"
+    "bot_1 bot_1"
+    "bot_2 bot_2"
+    "bot_3 bot_3";
+}
+.mid_1 {
+  grid-area: mid_1; 
+  display: grid;
+  gap: 12px;
+}
+.mid_2 {
+  grid-area: mid_2; 
+  display: grid;
+  text-align: center;
+  gap: 12px;
+}
+
+#anio_group, #cant_group{
+  margin-left: 9%;
+}
+.senders{
+  width: 170px;
+}
+.top_1 { grid-area: top_1; }
+.top_2 { grid-area: top_2; }
+.top_3 { grid-area: top_3; }
+.top_4 { grid-area: top_4; }
+.top_5 { grid-area: top_5; }
+.blank_1 { grid-area: blank_1; }
+.bot_1 { grid-area: bot_1; }
+.bot_3 { grid-area: bot_3; }
+.bot_2 { 
+  grid-area: bot_2;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+ }
+
+
+
+#formDane {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr ; 
+  grid-template-areas: 
+  "navbar-brand"
+  "top_1_d "
+  "top_2_d"
+  "top_3_d"
+  "top_4_d" 
+  "top_5_d" 
+  "bot_1_d"
+  "bot_2_d";
+}
+.navbar-brand { grid-area: navbar-brand; }
+.top_1_d { grid-area: top_1_d; }
+.top_2_d { grid-area: top_2_d; }
+.top_3_d { grid-area: top_3_d;  }
+.top_4_d { grid-area: top_4_d; margin-left: 61%;}
+.top_5_d { grid-area: top_5_d; margin-left: 61%;}
+.bot_1_d { 
+  grid-area: bot_1_d; 
+  
+ }
+ .bot_2_d{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+ }
+
+
+
+@media (max-width: 768px) {
+  .logo_form{
+    display: block;
+  }
+  .h2-drop{
+    font-size: 24px;
+  }
+  .navbar{
+    display: none;
+  }
+  main{
+    height: 100vh;
+  }
+  .card{
+    height: 110vh;
+    
+  }
+  #formAccidentes {
+    text-align: center;
+    grid-template-columns: 1fr; /* Cambia a una columna en pantallas más pequeñas */
+    grid-template-rows: .8fr .2fr 0.1fr 0.1fr 0.4fr .2fr .4fr 1fr 1.1fr 0.5fr;
+    grid-template-areas: 
+    "navbar-brand"
+    "top_1"
+    "blank_1"
+    "top_2"
+    "top_3"
+    "top_4"
+    "top_5"
+    "mid_1"
+    "mid_2"
+    "bot_1"
+    "bot_2"
+    "bot_3";
+    height: auto;
+    overflow-y:auto ;
+    overflow-x: hidden;
+  }
+  .bot_2 { 
+    display: block;
+   }
+   .top_2, .top_4{
+    font-size: 18px;
+   }
+
+  #formDane{
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr .1fr .1fr .1fr .08fr .08fr .04fr .1fr;
+    grid-template-areas: 
+  "navbar-brand"
+  "top_1_d "
+  "top_2_d"
+  "top_3_d"
+  "top_4_d" 
+  "top_5_d" 
+  "bot_1_d"
+  "bot_2_d";
+  }
+  
+  #anio_group{
+    margin-left:17% ;
+  }
+  
+
+  .card{
+    width: 100vw;
+    min-width: 0;
+    
+  }
+  .content{
+    width: 100vw;
+  }
+  .back{
+    width: 100vw;
+  }
+  .front{
+    width: 100vw;
+  }
+  .top_4_d{
+    margin-left: 42%;
+  }
+  .top_5_d{
+    margin-left: 42%;
+  }
+}
+
